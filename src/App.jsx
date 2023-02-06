@@ -1,9 +1,16 @@
 import React from 'react';
 import { Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
+import useStyles from './styles'
+
+//it contains an object that contains all the styles
+//'theme' is to provide additional styling
 
 //functional component
-const App = () => {
+const App = (props) => {
+
+    const classes = useStyles(props);
+
     return (
         <>
             <CssBaseline />
@@ -17,7 +24,7 @@ const App = () => {
             </AppBar>
 
             <main>
-                <div>
+                <div className={classes.root}>
                     <Container maxWidth="sm">
                         <Typography variant="h2" align="center" color="textPrimary" gutterottom>
                             Photo Album
